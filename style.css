@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #303030;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+button {
+    padding: 8px;
+    width: 106px;
+    height: 35px;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #8E43ED;
+    border-radius: 12px;
+    background-color: white;
+    font-family: inherit;
+}
+
+button:hover {
+    background: #FAF8FE;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+
+.create-box {
+    width: 380px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0 0.3125rem 1.25rem 0 rgb(0 0 0 / 16%);
+}
+
+.create-box h2 {
+    text-align: center;
+}
+
+.create-box input {
+    width: 100%;
+    height: 35px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    border: 1px solid #D9BBFF;
+    border-radius: 12px;
+    resize: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.create-box input:focus {
+    border: 1px solid #8E43ED;
+}
+
+.create-box button {
+    width: fit-content;
+}
+
+.display {
+    display: none;
+}
+
+.flashcards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.flashcard {
+    width: 370px;
+    height: 200px;
+    word-wrap: break-word;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.flashcard .front,
+.flashcard .back {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 12px;
+    transition: transform .6s linear;
+    box-shadow: 0 0.3125rem 1.25rem 0 rgb(0 0 0 / 16%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard .front h2, .flashcard .back h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.flashcard .front {
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.flashcard .back {
+    transform: perspective(600px) rotateX(180deg);
+}
+
+.flashcard .front.active {
+    transform: perspective(600px) rotateX(-180deg);
+}
+
+.flashcard .back.active {
+    transform: perspective(600px) rotateX(0deg);
+}
+
+/* .h2Word {
+    border-top: 1px solid #8E43ED;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.h2Translation {
+    text-align: center;
+    display: none;
+    color: #8E43ED;
+}
+
+.h2Translation.display {
+    display: block;
+} */
+
+.create-box .error-input {
+    border: 1px solid #ED4376;
+    background: #FFF5F5;
+    margin-bottom: 0;
+}
+
+.create-box .error-input:focus {
+    border: 1px solid #ED4376;
+    background: #FFF5F5;
+}
+
+.error {
+    color: #ED4376;
+    font-size: 0.9rem;
+    padding: 3px 0px 10px 10px;
+    display: none;
+}
+
+.error.active {
+    display: block;
+}
+
+@media(max-width:768px) {
+    .flashcard {
+        margin: auto;
+    }
+
+    .flashcard {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:480px) {
+    header {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-box {
+        width: 100%;
+    }
+
+    .flashcard {
+        width: 100%;
+    }
+}
